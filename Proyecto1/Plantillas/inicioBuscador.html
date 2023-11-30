@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Plantillas/fuente.css' %}">
+    <title>Formulario de Búsqueda</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #202020;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #9542f4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Club';
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #9542f4;
+            color: #fff;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #8527f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #ffffff;
+            box-sizing: border-box; /* Asegura que el padding no se agregue al ancho total */
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <h1>Buscador</h1>
+
+    <form id="searchForm">
+        <input type="text" id="palabra" name="palabra" required>
+        <button type="button" onclick="buscar()">Buscar</button>
+    </form>
+
+    <br><br><br><br>
+    <p>
+        Realiza tu búsqueda con palabras clave
+    </p>
+
+    <ul>
+        <!-- Tus enlaces aquí -->
+    </ul>
+
+    <footer>
+        Hecho por Cesar Arturo Hernandez Olivares
+    </footer>
+
+    <script>
+        function buscar() {
+            var palabra = document.getElementById('palabra').value;
+            window.location.href = 'http://127.0.0.1:8000/buscar/' + palabra;
+        }
+    </script>
+</body>
+</html>
